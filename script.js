@@ -1,14 +1,29 @@
 document.addEventListener("DOMContentLoaded", function() {
+  const clickMeButton = document.getElementById("btn-click-me");
+  clickMeButton.addEventListener("click", function() {
+    createButtons();
+  });
+});
+
+function createButtons() {
   const parentElement = document.body;
+  const clickMeButton = document.getElementById("btn-click-me");
 
   // Remove the "Click Me" button
-  const clickMeButton = document.getElementById("btn-click-me");
   parentElement.removeChild(clickMeButton);
 
   // Create the new buttons
-  createButton("service-button-1");
-  createButton("service-button-2");
-});
+  const service1Button = createButton("service-button-1");
+  const service2Button = createButton("service-button-2");
+
+  service1Button.addEventListener("click", function() {
+    createThirdLayer("service-button-1");
+  });
+
+  service2Button.addEventListener("click", function() {
+    createThirdLayer("service-button-2");
+  });
+}
 
 function createButton(buttonId) {
   const parentElement = document.body;
@@ -21,9 +36,7 @@ function createButton(buttonId) {
   button.disabled = true;
   parentElement.appendChild(button);
 
-  button.addEventListener("click", function() {
-    createThirdLayer(buttonId);
-  });
+  return button;
 }
 
 function createThirdLayer(serviceButtonId) {
@@ -37,7 +50,7 @@ function createThirdLayer(serviceButtonId) {
   for (let i = 1; i <= 3; i++) {
     const dateButton = document.createElement("button");
     dateButton.textContent = "Date " + i;
-    dateButton.id = "date-button";
+    dateButton.id = "date-button-" + i;
     dateButton.classList.add("time");
     parentElement.appendChild(dateButton);
   }
