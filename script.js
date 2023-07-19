@@ -15,50 +15,38 @@ function createButtons() {
   // Create the new buttons
   const service1Button = document.createElement("button");
   service1Button.textContent = "Service 1";
+  service1Button.id = "service-button-1";
   service1Button.classList.add("service");
   parentElement.appendChild(service1Button);
 
   const service2Button = document.createElement("button");
   service2Button.textContent = "Service 2";
+  service2Button.id = "service-button-2";
   service2Button.classList.add("service");
   parentElement.appendChild(service2Button);
 
   service1Button.addEventListener("click", function() {
-    createThirdLayer(service1Button);
+    createThirdLayer("service-button-1");
   });
 
   service2Button.addEventListener("click", function() {
-    createThirdLayer(service2Button);
+    createThirdLayer("service-button-2");
   });
 }
 
-function createThirdLayer(serviceButton) {
+function createThirdLayer(serviceButtonId) {
   const parentElement = document.body;
-  const serviceButtons = document.querySelectorAll(".service");
+  const serviceButton = document.getElementById(serviceButtonId);
 
-  // Remove the service buttons
-  serviceButtons.forEach(function(button) {
-    parentElement.removeChild(button);
-  });
+  // Remove the service button
+  parentElement.removeChild(serviceButton);
 
   // Create the third layer buttons
-  const dates = generateRandomDates(3); // Generate 3 random dates
-  for (let i = 0; i < 3; i++) {
+  for (let i = 1; i <= 3; i++) {
     const dateButton = document.createElement("button");
-    dateButton.textContent = dates[i];
+    dateButton.textContent = "Date " + i;
+    dateButton.id = "date-button-" + i;
     dateButton.classList.add("time");
     parentElement.appendChild(dateButton);
   }
-}
-
-function generateRandomDates(count) {
-  const dates = [];
-  const currentDate = new Date();
-
-  for (let i = 0; i < count; i++) {
-    const randomDate = new Date(currentDate.getTime() + Math.random() * 10 * 24 * 60 * 60 * 1000); // Add random days
-    dates.push(randomDate.toDateString());
-  }
-
-  return dates;
 }
