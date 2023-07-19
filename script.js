@@ -13,35 +13,33 @@ function createButtons() {
   parentElement.removeChild(clickMeButton);
 
   // Create the new buttons
-  const service1Button = createButton("service-button-1");
-  const service2Button = createButton("service-button-2");
+  const service1Button = createServiceButton("Service 1", "03.08");
+  const service2Button = createServiceButton("Service 2", "04.08");
 
   service1Button.addEventListener("click", function() {
-    createThirdLayer("service-button-1");
+    createThirdLayer(service1Button);
   });
 
   service2Button.addEventListener("click", function() {
-    createThirdLayer("service-button-2");
+    createThirdLayer(service2Button);
   });
 }
 
-function createButton(buttonId) {
+function createServiceButton(serviceName, date) {
   const parentElement = document.body;
 
-  // Create the button
-  const button = document.createElement("button");
-  button.innerHTML = '<div><!----> čet. 03.08 </div><div>18:30</div><div><b> Čez 15 dni </b></div>';
-  button.id = buttonId;
-  button.classList.add("btn", "m--font-inverse-light", "btn-outline-success", "btn-sm", "mr-2", "mb-3");
-  button.disabled = true;
-  parentElement.appendChild(button);
+  // Create the service button
+  const serviceButton = document.createElement("button");
+  serviceButton.innerHTML = `<div><!----> ${date} </div><div>18:30</div><div><b> Čez 15 dni </b></div>`;
+  serviceButton.classList.add("btn", "service");
+  serviceButton.textContent = serviceName;
+  parentElement.appendChild(serviceButton);
 
-  return button;
+  return serviceButton;
 }
 
-function createThirdLayer(serviceButtonId) {
+function createThirdLayer(serviceButton) {
   const parentElement = document.body;
-  const serviceButton = document.getElementById(serviceButtonId);
 
   // Remove the service button
   parentElement.removeChild(serviceButton);
@@ -50,7 +48,6 @@ function createThirdLayer(serviceButtonId) {
   for (let i = 1; i <= 3; i++) {
     const dateButton = document.createElement("button");
     dateButton.textContent = "Date " + i;
-    dateButton.id = "date-button-" + i;
     dateButton.classList.add("time");
     parentElement.appendChild(dateButton);
   }
