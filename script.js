@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const clickMeButton = document.getElementById("btn-click-me");
-  clickMeButton.addEventListener("click", function() {
-    createButtons();
+  const parentElement = document.body;
+
+  // Event delegation for the "btn-click-me" button
+  parentElement.addEventListener("click", function(event) {
+    if (event.target.id === "btn-click-me") {
+      createButtons(parentElement);
+    }
   });
 });
 
-function createButtons() {
-  const parentElement = document.body;
+function createButtons(parentElement) {
   const clickMeButton = document.getElementById("btn-click-me");
 
   // Remove the "Click Me" button
@@ -36,21 +39,14 @@ function createButtons() {
   service4Button.classList.add("service-button");
   parentElement.appendChild(service4Button);
 
-  // Add click event listeners to Service buttons
-  service1Button.addEventListener("click", function() {
-    createNestedButtons("Service 1", parentElement);
-  });
-
-  service2Button.addEventListener("click", function() {
-    createNestedButtons("Service 2", parentElement);
-  });
-
-  service3Button.addEventListener("click", function() {
-    createNestedButtons("Service 3", parentElement);
-  });
-
-  service4Button.addEventListener("click", function() {
-    createNestedButtons("Service 4", parentElement);
+  // Add click event listener using event delegation
+  parentElement.addEventListener("click", function(event) {
+    const clickedButton = event.target;
+    if (clickedButton.classList.contains("service-button")) {
+      const serviceName = clickedButton.innerText;
+      createNestedButtons(serviceName, parentElement);
+      parentElement.removeChild(clickedButton); // Remove the clicked button
+    }
   });
 }
 
