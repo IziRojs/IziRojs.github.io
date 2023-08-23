@@ -1,0 +1,93 @@
+/* Import the custom font */
+@font-face {
+    font-family: 'Norwester';
+    src: url('norwester.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+ /* Apply the custom font to specific elements */
+body {
+  font-family: 'Norwester', sans-serif;
+  /* Your other styles */
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(150, 200, 150, 1); /* Solid light green */
+  overflow: hidden; /* Hide overflow from pseudo-element */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("noise.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5; /* Adjust the opacity to make it semi-transparent */
+}
+
+  .header {
+    position: absolute;
+    font-size: 3rem;
+    color: #F5F5F5;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  
+  .pick-music {
+    position: absolute;
+    font-size: 4rem;
+    color: #F5F5F5;
+    top: calc(68%);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  
+  .sphere {
+    width: 28%;
+    padding-top: 28%;
+    background: radial-gradient(circle, #ddd, #888);
+    border-radius: 50%;
+    animation: rotate 10s linear infinite, breathingAnimation 6s infinite alternate;
+    filter: blur(3px);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+  
+  @keyframes breathingAnimation {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes backgroundAnimation {
+    0% {
+      background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+    }
+    100% {
+      background: linear-gradient(to bottom, #e0e0e0, #f5f5f5);
+    }
+  }
+  
