@@ -1,93 +1,238 @@
-/* Import the custom font */
-@font-face {
-    font-family: 'Norwester';
-    src: url('norwester.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
- /* Apply the custom font to specific elements */
 body {
-  font-family: 'Norwester', sans-serif;
-  /* Your other styles */
   margin: 0;
+  position: relative;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 300; /* kasneje mogoče se italic?*/
+}
+
+.gradient-container {
+  position: relative;
+  background: linear-gradient(to top, rgb(66, 63, 62), transparent 70%, transparent 70%, rgb(190, 184, 178)), rgb(228, 228, 228);
+  overflow: hidden;
+}
+
+.gradient-container::before,
+.gradient-container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.gradient-container::before {
+  transform: translateY(-50%) rotate(45deg);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.gradient-container::after {
+  transform: translateY(-50%) rotate(-45deg);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+}
+
+
+h1 {
+  text-align: center;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 600; /* Semibold variant */
+  font-size: 3.8vh;
+  color: rgb(30, 30, 30);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3vh;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 600; /* Semibold variant */
+  font-size:3vh;
+  color:rgb(30, 30, 30);
+}
+
+.content {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  position: relative;
-  background-color: rgba(150, 200, 150, 1); /* Solid light green */
-  overflow: hidden; /* Hide overflow from pseudo-element */
 }
 
-body::before {
-  content: "";
+.text-above, .text-below {
+  text-align: center;
+  z-index: 1;
+  padding: 20px 0; 
+}
+
+.text-above {
+  margin-bottom: 17%; 
+}
+
+.text-below {
+  text-align: center;
+  padding: 20px 0; 
+  margin-top: 10%; 
+  opacity: 0; /* Zakrit do reveal animation */
+  animation: revealAnimation 1s ease-out 3s forwards; 
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .text-above {
+    margin-bottom: 35%;
+  }
+  
+  .text-below {
+    margin-top: 35%; 
+  }
+}
+
+@keyframes revealAnimation {
+  to {
+    opacity: 1; /* Prikaži text */
+  }
+}
+
+.typewriter_1, .typewriter_2 {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 10px solid rgb(126, 126, 126);
+}
+
+.typewriter_1 {
+  animation: typewriter 3s steps(20) 1 forwards, hideBorder 3s steps(20) 1 3s forwards;
+}
+
+.typewriter_2 {
+  animation: typewriter_2 3s steps(20) 1 3s forwards, hideBorder 3s steps(20) 1 3s forwards; /* Delay za 3s, da se prvi zanimira*/
+}
+
+@keyframes typewriter {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typewriter_2 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes hideBorder {
+  0% {
+    border-right-color: rgb(67, 67, 67);
+  }
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+header {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0%;
   width: 100%;
-  height: 100%;
-  background-image: url("noise.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.5; /* Adjust the opacity to make it semi-transparent */
+  background: rgba(127, 127, 127, 0.5);
+  padding: 0px;
+  border-bottom: 3px solid #dadada;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-  .header {
-    position: absolute;
-    font-size: 3rem;
-    color: #F5F5F5;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
+header img {
+  max-width: 80px;
+  height: auto;
+}
+
+#toggleAudio {
+  display: block;
+  margin: 0;
+  width: 38px;
+  height: 38px;
+  background-image: url('Play_pause_button.png'); 
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  position: absolute;
+  top: 55%;
+  right: 12%;
+  transform: translateY(-50%);
+}
+
+
+#audioName {
+  color: white;
+  font-size: 2.2vh;
+  text-align: center;
+  margin-right: 16%;
+  margin-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  #audioName {
+    margin-right: 30%;
+    font-size: 1.9vh;
   }
-  
-  .pick-music {
-    position: absolute;
-    font-size: 4rem;
-    color: #F5F5F5;
-    top: calc(68%);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-  }
-  
+}
+
+.sphere {
+  width: 23%;
+  position: absolute;
+  top: 30%;
+  left: 37.5%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  padding-top: 23%;
+  background: radial-gradient(circle, #ddd, #6a6a6a);
+  border-radius: 50%;
+  animation: rotate 10s linear infinite, heartbeatAnimation 1s infinite;
+  filter: blur(2px);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
   .sphere {
-    width: 28%;
-    padding-top: 28%;
-    background: radial-gradient(circle, #ddd, #888);
-    border-radius: 50%;
-    animation: rotate 10s linear infinite, breathingAnimation 6s infinite alternate;
-    filter: blur(3px);
-    transition: transform 0.3s ease-in-out;
+    width: 50%;
+    top: 35%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    padding-top: 50%;
   }
-  
-  @keyframes rotate {
-    0% {
-      transform: rotateX(0deg) rotateY(0deg);
-    }
-    100% {
-      transform: rotateX(360deg) rotateY(360deg);
-    }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
   }
-  
-  @keyframes breathingAnimation {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
   }
-  
-  @keyframes backgroundAnimation {
-    0% {
-      background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
-    }
-    100% {
-      background: linear-gradient(to bottom, #e0e0e0, #f5f5f5);
-    }
+}
+
+@keyframes heartbeatAnimation {
+  0%, 100% {
+    transform: scale(1);
   }
-  
+  50% {
+    transform: scale(1.1);
+  }
+}
+
