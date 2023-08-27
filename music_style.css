@@ -268,11 +268,11 @@ h2 {
 
 .left-arrow-button {
   background-color: transparent;
-  background-image: url('left_arrow.png');
+  background-image: url('Left_arrow.png');
 }
 .right-arrow-button {
   background-color: transparent;
-  background-image: url('right_arrow.png');
+  background-image: url('Right_arrow.png');
 }
 
 
