@@ -279,8 +279,10 @@ h2 {
 .draggable-sphere {
   width: 7vh;
   height: 7vh;
-  background: radial-gradient(circle, #ddd, #6a6a6a);
+  background-color: #cecece;
   border-radius: 50%;
   position: absolute;
   cursor: grab;
+  filter: blur(1px);
 }
+
