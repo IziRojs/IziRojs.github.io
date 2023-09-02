@@ -135,11 +135,54 @@ function checkButtonPress(event) {
   // Add event listeners for the left and right arrow buttons
   leftButton.addEventListener("click", () => {
     console.log("Left button clicked");
-    draggableSphere.style.backgroundColor = "#59644E";
+    draggableSphere.style.backgroundColor = "rgb(89, 100, 78)";
   });
 
   rightButton.addEventListener("click", () => {
     console.log("Right button clicked");
     draggableSphere.style.backgroundColor = "#490648";
   });
+  
+});
+
+// Define the left and right arrow buttons
+const leftButton = document.querySelector(".left-arrow-button");
+const rightButton = document.querySelector(".right-arrow-button");
+
+// Add an event listener to the button that changes the sphere's background color
+leftButton.addEventListener("click", function() {
+  // Get the computed background color of the sphere
+  const computedColor = getComputedStyle(draggableSphere).backgroundColor;
+  
+  // Define the target background color (e.g., #59644E)
+  const targetColor = "rgb(89, 100, 78)"; // Update with the actual target color
+
+  // Check if the background color matches the target color
+  if (computedColor === targetColor) {
+    // Disable the left and right arrow buttons
+    leftButton.disabled = true;
+    rightButton.disabled = true;
+  }
+});
+
+// Add an event listener to the left arrow button
+leftButton.addEventListener("click", function() {
+  // Add the "pulse" class to the draggable sphere
+  draggableSphere.classList.add("pulse");
+});
+// Get a reference to the .content element
+const contentElement = document.querySelector('.content');
+
+// Get a reference to the .draggable-sphere element
+const sphereElement = document.querySelector('.draggable-sphere');
+
+// Add an animation end event listener to the .draggable-sphere element
+sphereElement.addEventListener('animationend', function (e) {
+  if (e.animationName === 'pulseAnimation' && e.elapsedTime >= 0.875) {
+    // Remove the .content element from the DOM
+    contentElement.parentNode.removeChild(contentElement);
+
+    // Remove the animation end event listener to prevent further removals
+    sphereElement.removeEventListener('animationend', arguments.callee);
+  }
 });
