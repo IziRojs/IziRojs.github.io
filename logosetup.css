@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    position: relative;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 300; /* kasneje mogoče se italic?*/
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .gradient-container {
+    position: relative;
+    background: linear-gradient(to top, rgb(66, 63, 62), transparent 70%, transparent 70%, rgb(190, 184, 178)), rgb(228, 228, 228);
+    overflow: hidden;
+  }
+  
+  .gradient-container::before,
+  .gradient-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
+  .gradient-container::before {
+    transform: translateY(-50%) rotate(45deg);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+  }
+  
+  .gradient-container::after {
+    transform: translateY(-50%) rotate(-45deg);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+  }
+  
+  header {
+    position: absolute;
+    top: 0px;
+    left: 0%;
+    width: 100%;
+    background: rgba(127, 127, 127, 0.5);
+    padding: 0px;
+    border-bottom: 3px solid #dadada;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+  }
+  
+  header img {
+    max-width: 80px;
+    height: auto;
+    z-index: 3;
+  }
+
+#toggleAudio {
+    display: block;
+    margin: 0;
+    width: 38px;
+    height: 38px;
+    background-image: url('Play_pause_button.png'); 
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
+    top: 55%;
+    right: 12%;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+  
+  
+  #audioName {
+    color: white;
+    font-size: 2.2vh;
+    text-align: center;
+    margin-right: 16%;
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 3;
+  }
+  
+  /* Media query for mobile screens */
+  @media (max-width: 768px) {
+    #audioName {
+      margin-right: 30%;
+      font-size: 1.9vh;
+    }
+  }
+  
+
+  
