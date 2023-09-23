@@ -110,7 +110,7 @@ rightButton.addEventListener("click", function() {
         const heading = document.createElement("h1");
     
         // Set the text content
-        heading.textContent = "Transformative Power of Music in Gaming"
+        heading.textContent = "Power of Music in Gaming"
     
         // Apply CSS styles
         heading.style.textAlign = "center";
