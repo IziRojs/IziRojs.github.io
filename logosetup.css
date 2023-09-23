@@ -418,25 +418,23 @@ body {
       0% {
         transform: translate(-50%, -50%) scale(1);
         filter: blur(0);
-        border-bottom-color: #490648; /* Sandy yellowish color */
+        border-bottom-color: #DFAADD; /* Sandy yellowish color */
       }
       25%, 75% {
         transform: translate(-50%, -50%) scale(1.25);
         filter: blur(2px);
-        border-bottom-color: #490648; /* Sandy yellowish color */
+        border-bottom-color: #DFAADD; /* Sandy yellowish color */
       }
       50% {
         transform: translate(-50%, -50%) scale(1);
         filter: blur(2px);
-        border-bottom-color: #490648; /* Sandy yellowish color */
+        border-bottom-color: #DFAADD; /* Sandy yellowish color */
       }
       100% {
         transform: translate(-50%, -50%) scale(135);
         filter: blur(0);
-        border-bottom-color: #490648; /* Sandy yellowish color */
+        border-bottom-color: #DFAADD; /* Sandy yellowish color */
       }
     }
     
-    
-  
   

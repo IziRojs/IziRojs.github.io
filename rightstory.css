@@ -1,0 +1,47 @@
+.content-right {
+    transition: opacity 1s ease-in-out; /* Add a transition effect */
+    opacity: 0; /* Initially make it invisible */
+  }
+
+  .content-right.show {
+    opacity: 1;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #DFAADD;
+  }
+
+  .city-img {
+    position: relative;
+    width: 100%;
+    height: 100%; 
+  }
+
+  .city-img img {
+    max-width: 100%; /* Ensure the images don't exceed the container width */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  @media (max-width: 768px) {
+    .city-img img {
+        width: 100%; /* Make the image fill the container width */
+        height: 80vh; /* Set the height to 80% of the viewport height */
+        object-fit: cover; /* Maintain aspect ratio and cover container */
+        object-position: center; /* Center the image within the container */
+    }
+  }
+
+  .fade-iner-1,
+.fade-iner-2 {
+    opacity: 0;
+    animation: fadeInAnimation 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

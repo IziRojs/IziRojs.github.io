@@ -6,15 +6,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="logosetup.css">
+  <link rel="stylesheet" href="rightstory.css">
   <title>Music Website</title>
 </head>
 <body>
+  <header>
+    <img src="logo1.png" alt="Logo">
+    <button id="toggleAudio" onclick="toggleAudio()"></button>
+    <div id="audioName">Intro The Dinasty</div>
+  </header>
   <div class="gradient-container">
-<header>
-  <img src="logo1.png" alt="Logo">
-  <button id="toggleAudio" onclick="toggleAudio()"></button>
-  <div id="audioName">The Music Caves Heartbeat by Izidor Rojs</div>
-</header>
     <div class="content">
       <div class="text-above">
         <h1 class="typewriter_1">Elevate Moments with Music</h1>
@@ -36,9 +37,13 @@
       </div>
     </div>
   </div>
+  <div class="content-right">
+    <div class="city-img"></div>
+  </div>
   <audio id="audio" autoplay>
     <source src="Heartbeat sound.mp4" type="audio/mp4">
   </audio>
   <script src="script.js"></script>
+  <script src="rightstory.js"></script>
 </body>
 </html>

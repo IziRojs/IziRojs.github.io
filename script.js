@@ -149,10 +149,10 @@ rightButton.addEventListener("click", function() {
 
   if (window.matchMedia("(max-width: 768px)").matches) {
     // For mobile screens
-    blackTriangle.style.borderBottom = "4vh solid #490648";
+    blackTriangle.style.borderBottom = "4vh solid #DFAADD";
   } else {
     // For larger screens
-    blackTriangle.style.borderBottom = "5.71vh solid #490648";
+    blackTriangle.style.borderBottom = "5.71vh solid #DFAADD";
   }
 
   // Apply the rotation animation style
@@ -162,8 +162,25 @@ rightButton.addEventListener("click", function() {
   leftButton.disabled = true;
   rightButton.disabled = true;
 
+    // Get a reference to the content-right div
+    const contentRight = document.querySelector(".content-right");
+
+    // Delay the showing of content-right by 3.75 seconds
+    setTimeout(() => {
+      contentRight.classList.toggle("show");
+    }, 3750); // 3950 milliseconds is equivalent to 3.75 seconds
+
+  // Delay the action by 3.8 seconds (3800 milliseconds)
+  setTimeout(() => {
+    // Get a reference to the content element
+    const content = document.querySelector(".gradient-container");
+
+    // Remove the content HTML from the screen
+    content.innerHTML = "";
+  }, 3800);
+
 });
-  
+ 
 });
 
 
