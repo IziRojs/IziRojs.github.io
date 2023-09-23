@@ -104,5 +104,76 @@ rightButton.addEventListener("click", function() {
         const cityImgContainer = document.querySelector(".city-img");
         cityImgContainer.appendChild(cityImg4);
     }, 6300); // 6300 milliseconds is equivalent to 6.3 seconds
-
+    
+    setTimeout(() => {
+        // Create an h1 element
+        const heading = document.createElement("h1");
+    
+        // Set the text content
+        heading.textContent = "Transformative Power of Music in Gaming"
+    
+        // Apply CSS styles
+        heading.style.textAlign = "center";
+        heading.style.fontFamily = "'Chakra Petch', sans-serif";
+        heading.style.fontWeight = "600";
+        
+        // Check screen width and set font size and top margin accordingly
+        if (window.innerWidth < 768) {
+            heading.style.fontSize = "2.8vh";
+            heading.style.top = "50%";
+        } else {
+            heading.style.fontSize = "3.8vh";
+            heading.style.top = "65%";
+        }
+        
+        heading.style.color = "rgb(87, 76, 87)";
+        heading.style.zIndex = "5";
+        heading.style.position = "absolute";
+        heading.style.left = "50%";
+        heading.style.transform = "translate(-50%, -50%)"; // Centering
+    
+        // Apply typewriter animation
+        heading.classList.add("typewriter_1");
+    
+        // Append the h1 element to the .city-img div
+        const cityImgContainer = document.querySelector(".city-img");
+        cityImgContainer.appendChild(heading);
+    }, 7300); // 7300 milliseconds is equivalent to 4.3 seconds 
+    
+    setTimeout(() => {
+        // Create an h2 element
+        const heading = document.createElement("h2");
+    
+        // Set the text content
+        heading.textContent = "In the realm of interactive entertainment, where pixels paint worlds and narratives come alive, music emerges as an unsung hero, wielding unparalleled influence over the player's experience. It transcends the confines of mere auditory stimulation, becoming a cornerstone that enriches, guides, and immerses players in the virtual landscapes they traverse."
+    
+        // Apply CSS styles
+        heading.style.textAlign = "center";
+        heading.style.fontFamily = "'Chakra Petch', sans-serif";
+        heading.style.fontWeight = "600";
+        
+        // Check screen width and set font size and top margin accordingly
+        if (window.innerWidth < 768) {
+            heading.style.fontSize = "1.8vh";
+            heading.style.top = "70%";
+        } else {
+            heading.style.fontSize = "2.5vh";
+            heading.style.top = "80%";
+        }
+        
+        heading.style.color = "rgb(87, 76, 87)";
+        heading.style.zIndex = "5";
+        heading.style.position = "absolute";
+        heading.style.left = "50%";
+        heading.style.transform = "translate(-50%, -50%)"; // Centering
+    
+        // Apply typewriter animation
+        heading.classList.add("fade-iner-2");
+    
+        // Append the h1 element to the .city-img div
+        const cityImgContainer = document.querySelector(".city-img");
+        cityImgContainer.appendChild(heading);
+    }, 7900); // 7300 milliseconds is equivalent to 4.3 seconds
+    
 });
+
