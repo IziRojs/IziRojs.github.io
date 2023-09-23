@@ -1,3 +1,14 @@
+// najdi logo pa ga animiraj
+const svgObject = document.getElementById('Logo_svg');
+
+svgObject.addEventListener('load', function() {
+  const svgDoc = svgObject.contentDocument;
+  const darkElements = svgDoc.querySelectorAll('path[fill="#191b1f"]');
+  darkElements.forEach(element => {
+    element.style.animation = 'breathe 3s infinite alternate';
+  });
+});
+
 // Define the toggleAudio function outside of the DOMContentLoaded event listener
 function toggleAudio() {
   var button = document.getElementById("toggleAudio");
@@ -186,3 +197,4 @@ sphereElement.addEventListener('animationend', function (e) {
     sphereElement.removeEventListener('animationend', arguments.callee);
   }
 });
+

@@ -197,6 +197,12 @@ h2 {
     height: 0%;
   }
 }
+
+.logo_main {
+  width: auto;
+  height: 15em;
+}
+
 .sphere {
   width: 22%;
   position: absolute;
@@ -337,4 +343,14 @@ h2 {
 
 .pulse {
   animation: pulseAnimation 4s; /* Adjust the duration for the full cycle */
+}
+
+/* css za novo animacijo slike */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
