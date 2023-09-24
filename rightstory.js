@@ -110,13 +110,15 @@ rightButton.addEventListener("click", function() {
         const heading = document.createElement("h1");
     
         // Set the text content
-        heading.textContent = "Power of Music in Gaming"
+        heading.innerHTML = `
+            Power of <span class="flash-animation" style="color: #521850;">Music</span> in <span class="flash-animation1" style="color: #521850;">Gaming</span>
+        `;
     
         // Apply CSS styles
         heading.style.textAlign = "center";
         heading.style.fontFamily = "'Chakra Petch', sans-serif";
         heading.style.fontWeight = "600";
-        
+    
         // Check screen width and set font size and top margin accordingly
         if (window.innerWidth < 768) {
             heading.style.fontSize = "2.8vh";
@@ -125,7 +127,7 @@ rightButton.addEventListener("click", function() {
             heading.style.fontSize = "3.8vh";
             heading.style.top = "65%";
         }
-        
+    
         heading.style.color = "rgb(87, 76, 87)";
         heading.style.zIndex = "5";
         heading.style.position = "absolute";
@@ -138,20 +140,27 @@ rightButton.addEventListener("click", function() {
         // Append the h1 element to the .city-img div
         const cityImgContainer = document.querySelector(".city-img");
         cityImgContainer.appendChild(heading);
-    }, 7300); // 7300 milliseconds is equivalent to 4.3 seconds 
+    }, 7300); // 7300 milliseconds is equivalent to 4.3 seconds
+    
     
     setTimeout(() => {
         // Create an h2 element
         const heading = document.createElement("h2");
     
         // Set the text content
-        heading.textContent = "In the realm of interactive entertainment, where pixels paint worlds and narratives come alive, music emerges as an unsung hero, wielding unparalleled influence over the player's experience. It transcends the confines of mere auditory stimulation, becoming a cornerstone that enriches, guides, and immerses players in the virtual landscapes they traverse."
+        heading.innerHTML = `
+            In the realm of interactive <span class="flash-animation1" style="color: #521850;">entertainment</span>, where pixels paint worlds and 
+            <span class="flash-animation" style="color: #521850;">narratives come alive</span>, music emerges as an <span class="flash-animation" style="color: #521850;">unsung hero</span>, 
+            wielding unparalleled influence over the <span class="flash-animation" style="color: #521850;">player's experience</span>. It transcends the confines of mere auditory 
+            <span class="flash-animation" style="color: #521850;">stimulation</span>, becoming a cornerstone that enriches, guides, and 
+            <span class="flash-animation1" style="color: #521850;">immerses</span> players in the <span class="flash-animation1" style="color: #521850;">virtual landscapes</span> they traverse.
+        `;
     
         // Apply CSS styles
         heading.style.textAlign = "center";
         heading.style.fontFamily = "'Chakra Petch', sans-serif";
         heading.style.fontWeight = "600";
-        
+    
         // Check screen width and set font size and top margin accordingly
         if (window.innerWidth < 768) {
             heading.style.fontSize = "1.8vh";
@@ -160,7 +169,7 @@ rightButton.addEventListener("click", function() {
             heading.style.fontSize = "2.5vh";
             heading.style.top = "80%";
         }
-        
+    
         heading.style.color = "rgb(87, 76, 87)";
         heading.style.zIndex = "5";
         heading.style.position = "absolute";
@@ -176,4 +185,5 @@ rightButton.addEventListener("click", function() {
     }, 7900); // 7300 milliseconds is equivalent to 4.3 seconds
     
 });
+
 
