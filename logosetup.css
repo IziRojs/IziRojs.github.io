@@ -281,11 +281,11 @@ body {
     background-color: #191b1f;
     border-radius: 50%;
     position: absolute;
+    filter:blur(1px);
     top: 53%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    animation: circleAnimation 2s alternate infinite;
   }
   
      
@@ -382,8 +382,8 @@ body {
 
  @keyframes tirangleAnimation {
     0% {
-      transform: translate(-50%, -50%) scale(0.9);
-      filter: blur(2px);
+      transform: translate(-50%, -50%) scale(1.1);
+      filter: blur(1px);
     }
     100% {
       transform: translate(-50%, -50%) scale(1.3);
