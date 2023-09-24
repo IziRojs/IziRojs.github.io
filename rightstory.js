@@ -55,6 +55,33 @@ rightButton.addEventListener("click", function() {
         cityImgContainer.appendChild(cityImg2);
     }, 4900); // 4900 milliseconds is equivalent to 4.2 seconds
 
+    setTimeout(() => {
+        // Create an img element
+        const cityImg5 = document.createElement("img");
+    
+        // Set the source and alt attributes
+        cityImg5.src = "city5.png";
+        cityImg5.alt = "City 5";
+    
+        // Apply CSS class for styling (fade-in animation)
+        cityImg5.classList.add("fade-iner-2");
+    
+        // Add the flash-animation class
+        cityImg5.classList.add("flash-animation");
+    
+        // Apply z-index property
+        cityImg5.style.zIndex = "3";
+    
+        // Apply absolute position
+        cityImg5.style.position = "absolute";
+        cityImg5.style.top = "0";
+        cityImg5.style.left = "0";
+    
+        // Append the img element to the city-img div
+        const cityImgContainer = document.querySelector(".city-img");
+        cityImgContainer.appendChild(cityImg5);
+    }, 7100); // 4900 milliseconds is equivalent to 4.2 seconds
+    
     // Delayed creation of the third image (City 3)
     setTimeout(() => {
         // Create an img element
@@ -163,8 +190,8 @@ rightButton.addEventListener("click", function() {
     
         // Check screen width and set font size and top margin accordingly
         if (window.innerWidth < 768) {
-            heading.style.fontSize = "1.8vh";
-            heading.style.top = "70%";
+            heading.style.fontSize = "2vh";
+            heading.style.top = "74%";
         } else {
             heading.style.fontSize = "2.5vh";
             heading.style.top = "80%";

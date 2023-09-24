@@ -48,7 +48,7 @@
 }
 
 .flash-animation {
-    animation: flickerAnimation 6s infinite alternate;
+    animation: flickerAnimation 10s infinite alternate;
 }
 @keyframes flickerAnimation {
     0%, 100% {
@@ -69,7 +69,7 @@
 }
 
 .flash-animation1 {
-    animation: flickerAnimation1 5s infinite alternate;
+    animation: flickerAnimation1 8s infinite alternate;
 }
 @keyframes flickerAnimation1 {
     0%, 100% {
