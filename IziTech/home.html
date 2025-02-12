@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>Music Globe</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>
+
+  <div id="container"></div>
+
+  <div id="info">
+    Made by <a href="//jtp.io" >Jeremy Tuloup</a> <span class="bull">&bull;</span>
+    Source code on <a href="//github.com/jtpio/music-globe" >Github</a> <span class="bull">&bull;</span>
+    Powered by <a href="//www.chromeexperiments.com/globe">WebGL Globe</a> <span class="bull">&bull;</span>
+    Data from <a href="//www.bandsintown.com/api/overview"> Bandsintown API V2 </a> and <a href="//musicbrainz.org/doc/Development/XML_Web_Service/Version_2/Search"> MusicBrainz </a>
+  </div>
+
+  <div id="description">
+    <p>
+      Artists past and upcoming events locations, visualized on a globe. <br>
+      The highest a bar is, the more often the artist played at that location.
+    </p>
+  </div>
+
+  <button id="tray" type="button" class="btn btn-default btn-xs">
+    <span class="glyphicon glyphicon-th-list"></span>
+  </button>
+
+  <div id="title">
+    <div class="input-group">
+      <input id="artistName" type="text" class="form-control" placeholder="Artist">
+      <div class="input-group-btn">
+        <button id="searchBtn" class="btn btn-primary" type="button">Search</button>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+        <ul class="dropdown-menu pull-right">
+          <li><a href="#raw">Search on Bandsintown by name</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cbs">
+      <label class="checkbox-inline">
+        <input type="checkbox" id="past" checked> Past
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="upcoming" checked> Upcoming
+      </label>
+    </div>
+
+    <div id="error" class="alert alert-danger"></div>
+
+    <div id="infos">
+      <h2 id="artist"> </h2>
+      <ul id="top10" class="list-group"></ul>
+    </div>
+
+    <div id="artists" class="list-group"><div>
+
+  </div>
+
+  <script type="text/javascript" src="Detector.js"></script>
+  <script type="text/javascript" src="three.min.js"></script>
+  <script type="text/javascript" src="Tween.js"></script>
+  <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="obejct.js"></script>
+  <script type="text/javascript" src="home.js"></script>
+
+</body>
+
+</html>

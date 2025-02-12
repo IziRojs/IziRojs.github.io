@@ -1,0 +1,33 @@
+body, h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #fff;
+}
+
+#menu-toggle {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+nav {
+    display: none; /* Hidden by default */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+}
